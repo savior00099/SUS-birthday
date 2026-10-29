@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Favicon: < and > URL-encoded for spec compliance -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🎂%3C/text%3E%3C/svg%3E" />
+    <!-- Pinch-zoom enabled; safe-area-inset handled via CSS env() below -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>🎂 Happy Birthday Humo! 💗 | A Special Surprise for Hamida</title>
+    <meta name="description" content="A dreamy, pastel, interactive digital birthday card &amp; scrapbook made with all the love for my precious person, Hamida." />
+    <!-- Keep this page out of search engine indexes (it's a private surprise!) -->
+    <meta name="robots" content="noindex, nofollow" />
+    <!-- Open Graph — looks great when the link is shared in chat apps -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="🎂 Happy Birthday Humo! A Special Surprise For You 💗" />
+    <meta property="og:description" content="A special interactive birthday surprise made with love for Humo — open it! 🌸✨" />
+    <meta property="og:image" content="/og-preview.png" />
+    <!-- Google Fonts: Fredoka & Caveat & Quicksand -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Fredoka:wght@300;400;500;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      /* Safe-area insets for notched / home-bar phones (viewport-fit=cover) */
+      body {
+        padding-top: env(safe-area-inset-top);
+        padding-bottom: env(safe-area-inset-bottom);
+        padding-left: env(safe-area-inset-left);
+        padding-right: env(safe-area-inset-right);
+      }
+    </style>
+  </head>
+  <body class="bg-[#FAF7F2] text-[#4A3E56] antialiased select-none overflow-x-hidden selection:bg-[#E9D5FF] selection:text-[#5B21B6]">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

@@ -1,0 +1,323 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-heading: 'Fredoka', cursive, sans-serif;
+    --font-hand: 'Caveat', cursive;
+    --font-sans: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    color: #1B4F6B;
+    background-color: #F0FAFA;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  h1, h2, h3, .font-heading {
+    font-family: var(--font-heading);
+  }
+
+  .font-hand {
+    font-family: var(--font-hand);
+  }
+}
+
+/* Ocean Dream Candy Stripes */
+.bg-pastel-stripes {
+  background: repeating-linear-gradient(
+    -45deg,
+    #E0F7FA,
+    #E0F7FA 24px,
+    #B2EBF2 24px,
+    #B2EBF2 48px
+  );
+}
+
+.bg-pastel-stripes-soft {
+  background: repeating-linear-gradient(
+    -45deg,
+    rgba(224, 247, 250, 0.65),
+    rgba(224, 247, 250, 0.65) 20px,
+    rgba(178, 235, 242, 0.65) 20px,
+    rgba(178, 235, 242, 0.65) 40px
+  );
+}
+
+.bg-dot-pattern {
+  background-image: radial-gradient(#67E8F9 1.5px, transparent 1.5px);
+  background-size: 18px 18px;
+}
+
+.bg-lined-paper {
+  background-color: #F0FDFF;
+  background-image: linear-gradient(#A5F3FC 1px, transparent 1px);
+  background-size: 100% 28px;
+  line-height: 28px;
+}
+
+/* Washi Tape Accent - Ocean Edition */
+.washi-tape-pink {
+  background: rgba(125, 211, 252, 0.85);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  transform: rotate(-3deg);
+  backdrop-filter: blur(1px);
+}
+
+.washi-tape-yellow {
+  background: rgba(167, 243, 208, 0.85);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  transform: rotate(2deg);
+  backdrop-filter: blur(1px);
+}
+
+.washi-tape-purple {
+  background: rgba(103, 232, 249, 0.85);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  transform: rotate(-1.5deg);
+  backdrop-filter: blur(1px);
+}
+
+/* Card Shadow */
+.polaroid-card {
+  background: #FFFFFF;
+  box-shadow: 
+    0 10px 25px -5px rgba(6, 182, 212, 0.15),
+    0 8px 10px -6px rgba(0, 0, 0, 0.05),
+    0 0 0 1px rgba(0, 0, 0, 0.03);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.polaroid-card:hover {
+  transform: translateY(-4px) rotate(0deg) scale(1.02);
+  box-shadow: 
+    0 20px 30px -10px rgba(6, 182, 212, 0.25),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Button Glow */
+.cute-btn {
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 4px 14px rgba(6, 182, 212, 0.30);
+}
+
+.cute-btn:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 6px 20px rgba(6, 182, 212, 0.45);
+}
+
+.cute-btn:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+/* Floating animation */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(3deg);
+  }
+}
+
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-5px) rotate(-2deg);
+  }
+}
+
+@keyframes wigglePlayful {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-6deg); }
+  75% { transform: rotate(6deg); }
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  14% { transform: scale(1.15); }
+  28% { transform: scale(1); }
+  42% { transform: scale(1.15); }
+  70% { transform: scale(1); }
+}
+
+@keyframes candleFlicker {
+  0%, 100% { transform: scale(1) translateY(0); filter: brightness(1); }
+  50% { transform: scale(1.12, 0.9) translateY(-1px); filter: brightness(1.2); }
+}
+
+@keyframes tapeSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.animate-float-slow {
+  animation: floatSlow 4s ease-in-out infinite;
+}
+
+.animate-float-gentle {
+  animation: floatGentle 3s ease-in-out infinite;
+}
+
+.animate-wiggle {
+  animation: wigglePlayful 1.8s ease-in-out infinite;
+}
+
+.animate-heartbeat {
+  animation: heartbeat 2s ease-in-out infinite;
+}
+
+.animate-candle {
+  animation: candleFlicker 1.2s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: tapeSpin 3s linear infinite;
+}
+
+/* Cute shake animation */
+@keyframes shakeCute {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-6px) rotate(-1.5deg); }
+  40%, 80% { transform: translateX(6px) rotate(1.5deg); }
+}
+
+.animate-shake {
+  animation: shakeCute 0.4s ease-in-out;
+}
+
+/* Scallop edge border */
+.scallop-bottom {
+  mask-image: radial-gradient(circle at 12px 100%, transparent 12px, black 13px);
+  mask-size: 24px 100%;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F0FAFA;
+}
+::-webkit-scrollbar-thumb {
+  background: #67E8F9;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #22D3EE;
+}
+
+/* Smoke Curl Animation for Extinguished Candle */
+@keyframes smokeCurl1 {
+  0% {
+    opacity: 0.85;
+    transform: translate(0, 0) scale(0.6);
+  }
+  50% {
+    opacity: 0.6;
+    transform: translate(-6px, -18px) scale(1.1) rotate(-8deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(8px, -40px) scale(1.6) rotate(15deg);
+  }
+}
+
+@keyframes smokeCurl2 {
+  0% {
+    opacity: 0.75;
+    transform: translate(0, 0) scale(0.5);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translate(6px, -16px) scale(1.0) rotate(10deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-10px, -36px) scale(1.5) rotate(-12deg);
+  }
+}
+
+.animate-smoke-1 {
+  animation: smokeCurl1 2.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.animate-smoke-2 {
+  animation: smokeCurl2 2.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.25s forwards;
+}
+
+/* Paper Unfold Animation */
+@keyframes paperUnfold {
+  0% {
+    opacity: 0;
+    transform: scaleY(0.4) translateY(-12px);
+    transform-origin: top center;
+  }
+  60% {
+    opacity: 1;
+    transform: scaleY(1.03) translateY(2px);
+    transform-origin: top center;
+  }
+  100% {
+    opacity: 1;
+    transform: scaleY(1) translateY(0);
+    transform-origin: top center;
+  }
+}
+
+.animate-paper-unfold {
+  animation: paperUnfold 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* Soft Fade Up */
+@keyframes fadeUpSoft {
+  0% {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUpSoft 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Candle Flame Extinguish */
+@keyframes flamePuffOut {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  40% {
+    opacity: 0.8;
+    transform: scale(1.3) translateY(-4px);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.1) translateY(-12px);
+  }
+}
+
+.animate-flame-extinguish {
+  animation: flamePuffOut 0.5s ease-out forwards;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
